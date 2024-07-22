@@ -1,12 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Roboto, Merriweather } from "next/font/google";
 import "./globals.css";
 import Header from "./layout/Header";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-  title: "Mobile business",
+  title: "Shopper",
   description: "Welcome ",
 };
 
