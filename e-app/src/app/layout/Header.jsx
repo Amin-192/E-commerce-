@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Header() {
   return (
    <>
-<nav className="glass rounded-xl py-2 px-3 mt-3 
+<nav className="glass rounded-xl py-2 px-3 mt-3 text-semibold
 shadow-2xl">
   <div className="flex justify-evenly text-center text-xl text-">
 <div>
@@ -31,7 +31,7 @@ shadow-2xl">
   text-red-500 ">
    Login
   </Link></li>
-    <li> <Link href="/register" className=" shadow-2xl  rounded-lg 
+    <li> <Link href="/Register" className=" shadow-2xl  rounded-lg 
   text-blue-500 " >
    Register
   </Link></li>
