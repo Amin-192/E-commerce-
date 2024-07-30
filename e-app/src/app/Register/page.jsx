@@ -7,9 +7,9 @@ import {useState} from "react";
 export default function registerPage() {
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
- function handleFormSubmit(ev){
+async function handleFormSubmit(ev){
 ev.preventDefault();
-fetch('/api/register', {
+await fetch('/api/register', {
     method: 'POST',
 body: JSON.stringify({email, password}),
 headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ headers: { 'Content-Type': 'application/json' },
   return (
     <section className="mt-8 bg-orange-300 rounded-full">
       <h1 className="text-center text-primary text-4xl mb-4">
-        Login
+        Register
       </h1>
      
       <form className="flex flex-col text-center gap-5 max-w-xs mx-auto p-3 " onSubmit={handleFormSubmit} >
