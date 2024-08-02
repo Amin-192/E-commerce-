@@ -1,6 +1,7 @@
 import { Inter, Roboto, Merriweather } from "next/font/google";
 import "./globals.css";
-import Header from "./layout/Header";
+import Header from "./components/layout/Header";
+import { AppProvider } from "./components/AppContext"
 
 
 const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"] });
@@ -16,10 +17,10 @@ export default function RootLayout({ children }) {
       <body className={''}>
 
         <main className="max-w-4xl p-4 mx-auto ">
-         
+          <AppProvider>
             <Header />
             {children}
-         
+          </AppProvider>
         </main>
 
       </body>

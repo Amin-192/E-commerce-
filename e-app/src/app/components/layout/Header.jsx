@@ -1,7 +1,12 @@
+'use client';
 import Link from "next/link";
 import Image from "next/image";
-
+import {useSession, signOut} from "next-auth/react"
 export default function Header() {
+  const session = useSession()
+  console.log(session)
+  const status = session.status;
+
   return (
    <>
 <nav className="glass rounded-xl py-2 px-3 mt-3 text-semibold
@@ -19,14 +24,22 @@ shadow-2xl">
   className="border-2 border-orange-300 rounded-2xl w-[300px] h-[50px] px-2
   "/>
   <button className="bg-orange-300 px-3 rounded-lg h-[50px] relative left-[2%]">Search</button>
+  {status === 'authenticated' && (
+      <button onClick={() => signOut()}
+      className="bg-red-500 px-3 rounded-lg h-[50px] relative left-[7%]
+       ">Logout</button>
+      )} 
   </div>
-  <div className="links flex gap-2 ">
+  {status !== 'authenticated' && (
+    <>
+    <div className="links flex gap-2 ">
   <div className="dropdown dropdown-hover">
   <div tabIndex={0} role="button" className="btn m-1">Account <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
   <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
 </svg>
  </div>
   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+   
     <li><Link href="/Login" className=" shadow-2xl  rounded-lg 
   text-red-500 ">
    Login
@@ -48,6 +61,9 @@ shadow-2xl">
   </button>
   
   </div>
+  
+    </>
+  )}
   
   </div>
 </nav>
