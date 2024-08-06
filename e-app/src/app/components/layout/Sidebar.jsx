@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 export default function Sidebar() {
   return (
-    <div className='absolute left-3 top-[18%] w-[300px] h-[400px] shadow-2xl
+    <div className=' left-3 top-[18%] w-[300px] h-[400px] shadow-2xl fixed  
      rounded-2xl p-2'>
       <div className='relative top-[10%]p-2'>
       <ul className="menu text-xl rounded-box w-[280] h-[380px]">
