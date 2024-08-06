@@ -32,8 +32,14 @@ setCreatingUser(false)
 
  }
   return (
-    <section className="mt-8 bg-orange-300 rounded-full">
-      <h1 className="text-center text-primary text-4xl mb-4">
+    <section className=" ">
+      <div className="absolute top-[25.5%] left-[16%] rounded-2xl">
+
+      <Image src={'/boba3.png'} alt={''} width={480} height={460} className="rounded-2xl" />
+      </div>
+
+      <div className="mt-20 p-4 relative left-[50%] shadow-2xl rounded-2xl w-[500px]">
+      <h1 className="text-center text-primary text-4xl mb-4 font-serif font-bold ">
         Register
       </h1>
      {userCreated &&(
@@ -72,6 +78,7 @@ setCreatingUser(false)
           <Link className="underline" href={'/Login'}>Login here &raquo;</Link>
         </div>
       </form>
+      </div>
     </section>
 
   );

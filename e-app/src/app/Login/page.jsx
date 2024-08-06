@@ -25,12 +25,12 @@ export default function loginPage() {
 
   return (
     <section>
-      <div className="absolute top-[20%] left-[16%] rounded-2xl">
+      <div className="absolute top-[25.5%] left-[16%] rounded-2xl">
         <Image src={'/boba2.png'} alt={''} width={480} height={460} className="rounded-2xl" />
       </div>
 
-      <div className="bg-orange-300 p-2 shadow-2xl rounded-2xl absolute top-[20%] left-[50%] w-[500px]">
-        <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
+      <div className="bg-orange-300 p-2 shadow-2xl rounded-2xl absolute top-[25.5%] left-[50%] w-[500px]">
+        <h1 className="text-center text-primary text-4xl mb-4 font-serif font-bold">Login</h1>
 
         <form className="flex flex-col text-center gap-5 max-w-xs mx-auto p-3" onSubmit={handleFormSubmit}>
           <input
@@ -69,7 +69,7 @@ export default function loginPage() {
           </button>
           <div className="text-center my-4 text-gray-500 border-t pt-4">
             already have an account?{' '}
-            <Link className="underline" href={'/Login'}>Login here &raquo;</Link>
+            <Link className="underline" href={'/Register'}>Register &raquo;</Link>
           </div>
         </form>
       </div>
