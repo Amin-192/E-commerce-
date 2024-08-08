@@ -32,6 +32,7 @@ setCreatingUser(false)
 
  }
   return (
+    <div className="">
     <section className=" ">
       <div className="absolute top-[25.5%] left-[16%] rounded-2xl">
 
@@ -80,6 +81,7 @@ setCreatingUser(false)
       </form>
       </div>
     </section>
+    </div>
 
   );
 }

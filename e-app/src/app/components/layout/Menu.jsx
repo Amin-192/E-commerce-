@@ -1,34 +1,21 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import { Products } from '../../../../src/products';
 
 export default function Menu() {
+  const displayProducts = Products.slice(0, 2); // Ensure only the first 2 products are taken
+
   return (
-    <div>
-     
-
-<div className="card card-compact  w-70 h-[400px] shadow-xl">
-  <figure>
-    <img
-      src="/lowdunk.png"
-      alt="Shoes" />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">Nike Low Dunks</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <p className='text-xl text-red-500 relative top-[14%]'>5000 ksh</p>
-      <button className="btn  border-orange-300 border-4 bg-white hover:bg-orange-300">Buy Now</button>
+    <div className="grid grid-cols-4 gap-7 w-[1200px] relativeleft-[40%]">
+      {Products.map((product, key) => (
+        <div key={key} className="shadow- p-4 rounded-2xl w-[300px]">
+          <Image className='bg-cover relative left-[10%] h-[180px] rounded-2xl' src={product.image} alt={product.name} width={200} height={20} />
+          <h1 className="mt-4 text-center text-lg font-serif ">{product.name}</h1>
+          <h1 className="mt-4 text-center text-lg font-serif text-orange-300 ">Ksh {product.price}</h1>
+          <button className='text-center relative left-[30%] bg-orange-300 px-4 py-2 rounded-2xl
+          hover:bg-orange-200 mt-3'>Add To Cart</button>
+        </div>
+      ))}
     </div>
-  
-</div>
-
-
-
-
-
-
-
-
-</div>
-    </div>
-  )
+  );
 }

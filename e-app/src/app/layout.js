@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={''}>
 
-        <main className="max-w-4xl p-4 mx-auto ">
+        <main className="w-screen h-auto  ">
           <AppProvider>
             <Header />
             {children}
